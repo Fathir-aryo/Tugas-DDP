@@ -1,0 +1,25 @@
+//Nama  : Fathir Aryoseto
+//NIM   : 2500018018
+//Kelas : A
+
+#include<iostream>
+using namespace std;
+
+int main(){
+    long long menit, detik, totalDetik;
+    
+    cout<<"Masukkan jumlah waktu (detik): ";
+    cin>>totalDetik;
+
+    long long hari = totalDetik / 86400;
+    totalDetik = totalDetik % 86400;
+    long long jam = totalDetik / 3600;
+    totalDetik = totalDetik % 3600;
+
+    menit = totalDetik / 60;
+    detik = totalDetik % 60;
+
+    cout<<"Hasil konversi : "<<hari<<" hari : "<<jam<<" jam : "<<menit<<" menit : "<<detik<< " detik"<<endl;
+    
+    return 0;
+}
