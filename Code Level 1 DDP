@@ -5,20 +5,25 @@
 #include<iostream>
 using namespace std;
 
-int main(){
-    long long detik;
-
-    cout<<"Masukkan angka > 1 (dalam satuan detik): ";
-    cin>>detik;
-
-    long long jam = detik / 3600;
-    long long sisa_detik = detik % 3600;
-    int menit = sisa_detik / 60;
-    int detik_akhir = sisa_detik % 60;
+void log(long long second){
+    
+    long long jam = second / 3600;
+    long long sisaDetik = second % 3600;
+    int menit = sisaDetik / 60;
+    int detikAkhir = sisaDetik % 60;
 
     cout<<endl;
     cout<<"Hasil konversi adalah : "<<endl;
-    cout<<detik<<" "<<"Detik = "<<" "<<jam<<" Jam"<<" "<<menit<<" Menit"<<" "<<detik_akhir<<" detik"<<endl;
+    cout<<second<<" "<<"Detik = "<<" "<<jam<<" Jam"<<" "<<menit<<" Menit"<<" "<<detikAkhir<<" detik"<<endl;
+}
 
+int main(){
+    long long detik;
+    cout<<"Masukkan angka > 1 (dalam satuan detik): ";
+    cin>>detik;
+
+    log(detik);
+
+    
     return 0;
 }
