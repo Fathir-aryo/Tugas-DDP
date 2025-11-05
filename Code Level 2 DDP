@@ -5,21 +5,26 @@
 #include<iostream>
 using namespace std;
 
-int main(){
-    long long menit, detik, totalDetik;
-    
-    cout<<"Masukkan jumlah waktu (detik): ";
-    cin>>totalDetik;
+void konvert(long long totDetik){
+    long long menit, detik;
+    long long hari = totDetik / 86400;
+    totDetik = totDetik % 86400;
+    long long jam = totDetik / 3600;
+    totDetik = totDetik % 3600;
 
-    long long hari = totalDetik / 86400;
-    totalDetik = totalDetik % 86400;
-    long long jam = totalDetik / 3600;
-    totalDetik = totalDetik % 3600;
-
-    menit = totalDetik / 60;
-    detik = totalDetik % 60;
+    menit = totDetik / 60;
+    detik = totDetik % 60;
 
     cout<<"Hasil konversi : "<<hari<<" hari : "<<jam<<" jam : "<<menit<<" menit : "<<detik<< " detik"<<endl;
+
+}
+
+int main(){
     
+    long long detik;
+    cout<<"Masukkan jumlah waktu (detik): ";
+    cin>>detik;
+
+    konvert(detik);
     return 0;
 }
