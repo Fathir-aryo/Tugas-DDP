@@ -1,0 +1,78 @@
+#include <iostream>
+using namespace std;
+
+double tambah(double a, double b) {
+    return a + b;
+}
+
+double kurang(double a, double b) {
+    return a - b;
+}
+
+double kali(double a, double b) {
+    return a * b;
+}
+
+double bagi(double a, double b) {
+    if (b != 0) {
+        return a / b;
+    } else {
+        cout << "Error: Tidak bisa dibagi dengan nol!" << endl;
+        return 0.0;
+    }
+}
+
+int main() {
+    double num1, num2;
+    char operasi;
+    double hasil = 0.0;
+
+    cout << " Kalkulator Sederhana C++ " << endl;
+    cout << "---------------------------------" << endl;
+    
+    cout << "Masukkan angka pertama: ";
+    if (!(std::cin >> num1)) {
+        cout << "Input tidak valid." << endl;
+        return 1;
+    }
+
+    cout << "Pilih operasi (+, -, *, /): ";
+    if (!(cin >> operasi)) {
+        cout << "Input tidak valid." << endl;
+        return 1;
+    }
+
+    cout << "Masukkan angka kedua: ";
+    if (!(cin >> num2)) {
+        cout << "Input tidak valid." << endl;
+        return 1;
+    }
+
+    switch (operasi) {
+        case '+':
+            hasil = tambah(num1, num2); 
+            break;
+        case '-':
+            hasil = kurang(num1, num2); 
+            break;
+        case '*':
+            hasil = kali(num1, num2); 
+            break;
+        case '/':
+            hasil = bagi(num1, num2);   
+            break;
+        default:
+            cout << "Operator tidak valid!" << endl;
+            return 1;
+    }
+
+    if (operasi == '/' && num2 == 0) {
+        
+    } else {
+        cout << "---------------------------------" << endl;
+        cout << "Hasil dari " << num1 << " " << operasi << " " << num2 << " = " << hasil << endl;
+    }
+
+    return 0;
+}
+
