@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+long long hitungPangkatRekursif(int basis, int eksponen) {
+    if (eksponen == 0) {
+        return 1;
+    }
+    else {
+        return basis * hitungPangkatRekursif(basis, eksponen - 1);
+    }
+}
+
+int main() {
+    int basis, eksponen;
+    
+    cout<<"Masukkan angka basis: "; cin>>basis;
+    cout<<"Masukkan angka eksponen: "; cin>>eksponen;
+    
+    
+    long long hasil = hitungPangkatRekursif(basis, eksponen);
+    
+    cout << "Hasil dari " << basis << "^" << eksponen << " adalah: " << hasil << endl;
+    
+    return 0;
+}
